@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vote.mapper.voteMapper">
+
+		<insert id="insert">
+		INSERT INTO vote VALUES(#{cddnum}, #{age})
+	</insert>
+	
+	<select id="selectAll" resultType="voteVO">
+		SELECT cddnum, age FROM vote
+	</select>
+	
+	<select id="selectCandidate" resultType="voteVO">
+		SELECT cddnum, age FROM vote WHERE cddnum = #{cddnum}
+	</select>
+	
+	<select id="getCount" resultType="Integer">
+		SELECT COUNT(*) FROM vote
+	</select>
+	
+	<select id="countCandidate" resultType="Integer">
+		SELECT COUNT(*) FROM vote WHERE cddnum = #{cddnum}
+	</select>
+	
+	<select id="countAge" resultType="Integer" parameterType="VoteVO">
+		SELECT COUNT(*) FROM vote WHERE cddnum = #{cddnum} and age = #{age}
+	</select>
+	
+	<delete id="delete">
+		DELETE FROM vote WHERE cddnum = #{cddnum}
+	</delete>
+	
+</mapper>
+
