@@ -28,7 +28,7 @@
 	<c:forEach items="${CandidateList}" var="candidate" varStatus="status">
 		<tr>
 			<td><a style=text-decoration:underline; href="${path}/vote/C_02?candidatenum=${candidate.num}">${candidate.num} ${candidate.name}</a></td>
-			<td width=500px>
+			<td width=600px>
 				<table>   <!--열 안에 테이블을 만들어서 td의 넓이를 득표율 만큼으로 만들어서 그래프처럼 이용. -->
 					<tr>
 						<td style="background-color:red" width=${percentList[status.index]*5}></td> 

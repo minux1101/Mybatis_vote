@@ -28,7 +28,7 @@
 		<c:forEach items="${ageModel}" var="age">
 		<tr>
 			<td>${age}대</td> <!-- 각 연령의 득표수와 득표율을 계산하는 메소드를 호출해서 값을 출력 -->
-			<td width=500px>
+			<td width=600px>
 				<table>  <!--열 안에 테이블을 만들어서 td의 넓이를 득표율*5 만큼으로 만들어서 그래프처럼 이용. -->
 					<tr> 
 						<td style=background-color:red; width=${agePercent.get(age/10-1)*5}></td>
